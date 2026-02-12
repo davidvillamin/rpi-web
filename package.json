@@ -1,0 +1,24 @@
+{
+  "name": "rpi-web",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/davidvillamin/rpi-web#readme",
+  "bugs": {
+    "url": "https://github.com/davidvillamin/rpi-web/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidvillamin/rpi-web.git"
+  },
+  "license": "ISC",
+  "author": "DJV IT Solutions",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
