@@ -6,6 +6,7 @@ const PORT = 3000;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "view"));
+app.set("public", path.join(__dirname, "public"));
 app.use('/assets', express.static(__dirname + '/assets/'));
 
 app.get("/", function(req, res) {
@@ -26,6 +27,11 @@ app.get('/sitemap.xml', function(req, res) {
             </url>
         </urlset>`);
 });
+
+app.get('/robots.txt', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'robots.txt'));
+});
+
 
 app.use(function(req, res) {
     res.status(404).render("error", {
