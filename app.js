@@ -13,6 +13,7 @@ app.get("/", function(req, res) {
 	res.render("maintenance/index");
 });
 
+// for google and other search engines to know the site is under maintenance and not dead, we need to serve a sitemap.xml and robots.txt
 app.get('/sitemap.xml', function(req, res) {
     res.header('Content-Type', 'application/xml');
     res.send(`<?xml version="1.0" encoding="UTF-8"?>
@@ -26,6 +27,11 @@ app.get('/sitemap.xml', function(req, res) {
                 <lastmod>2026-02-13T02:50:12+00:00</lastmod>
             </url>
         </urlset>`);
+});
+
+//for bing and other search engines to know the site is under maintenance and not dead, we need to serve a sitemap.xml and robots.txt
+app.get('/BingSiteAuth.xml', function(req, res) {
+    res.sendFile(path.join(__dirname,'public' ,'BingSiteAuth.xml'));
 });
 
 app.get('/robots.txt', function(req, res) {
