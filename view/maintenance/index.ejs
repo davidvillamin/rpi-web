@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="/assets/img/djv-logo.ico" type="image/png">
-    <title>DJV IT Solutions</title>
+    <title>Something Great is Coming</title>
     <style>
         * {
             margin: 0;
@@ -16,18 +16,28 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #78BEE6 0%, #2683EB 100%);
             min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .content-wrapper {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            overflow: hidden;
+            padding: 2rem 1rem;
         }
 
         .container {
             text-align: center;
             padding: 2rem;
-            max-width: 600px;
+            max-width: 650px;
+            width: 100%;
             animation: fadeIn 1s ease-in;
+            position: relative;
+            z-index: 10;
         }
 
         @keyframes fadeIn {
@@ -142,14 +152,83 @@
             }
         }
 
+        /* Contact Section */
+        .contact-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+        .contact-link {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .phone-numbers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .phone-numbers a {
+            font-size: 0.95rem;
+        }
+
+        .phone-divider {
+            opacity: 0.5;
+        }
+
         /* Floating particles */
         .particle {
-            position: absolute;
+            position: fixed;
             width: 10px;
             height: 10px;
             background: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             animation: float 3s infinite ease-in-out;
+            z-index: 1;
         }
 
         @keyframes float {
@@ -162,14 +241,23 @@
             }
         }
 
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 4s; }
-        .particle:nth-child(2) { left: 20%; animation-delay: 0.5s; animation-duration: 3.5s; }
-        .particle:nth-child(3) { left: 30%; animation-delay: 1s; animation-duration: 3s; }
-        .particle:nth-child(4) { left: 70%; animation-delay: 1.5s; animation-duration: 4.5s; }
-        .particle:nth-child(5) { left: 80%; animation-delay: 2s; animation-duration: 3.8s; }
-        .particle:nth-child(6) { left: 90%; animation-delay: 0.8s; animation-duration: 4.2s; }
+        .particle:nth-child(1) { left: 10%; top: 10%; animation-delay: 0s; animation-duration: 4s; }
+        .particle:nth-child(2) { left: 20%; top: 20%; animation-delay: 0.5s; animation-duration: 3.5s; }
+        .particle:nth-child(3) { left: 30%; top: 30%; animation-delay: 1s; animation-duration: 3s; }
+        .particle:nth-child(4) { left: 70%; top: 40%; animation-delay: 1.5s; animation-duration: 4.5s; }
+        .particle:nth-child(5) { left: 80%; top: 60%; animation-delay: 2s; animation-duration: 3.8s; }
+        .particle:nth-child(6) { left: 90%; top: 80%; animation-delay: 0.8s; animation-duration: 4.2s; }
 
         @media (max-width: 768px) {
+            .content-wrapper {
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
+
+            .container {
+                padding: 1.5rem 1rem;
+            }
+
             .logo-section {
                 flex-direction: column;
                 gap: 0.5rem;
@@ -181,13 +269,45 @@
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
+
             .subtitle {
+                font-size: 1rem;
+            }
+
+            .icon {
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .contact-section {
+                padding: 1.5rem 1rem;
+                margin-top: 2rem;
+            }
+
+            .contact-title {
                 font-size: 1.1rem;
             }
-            .icon {
-                font-size: 4rem;
+
+            .phone-numbers {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .phone-divider {
+                display: none;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.95rem;
+            }
+
+            .contact-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -200,28 +320,58 @@
     <div class="particle"></div>
     <div class="particle"></div>
 
-    <div class="container">
-        <div class="logo-section">
-            <div class="logo">
-                <img src="/assets/img/djv-logo.png" alt="DJV IT Solutions" style="width: 60px; height: 60px;">
+    <div class="content-wrapper">
+        <div class="container">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="/assets/img/djv-logo.png" alt="DJV IT Solutions" style="width: 60px; height: 60px;">
+                </div>
+                <div class="company-name">DJV IT Solutions</div>
             </div>
-            <div class="company-name">DJV IT Solutions</div>
-        </div>
 
-        <div class="icon">🚀</div>
-        <h1>We're Making Things Better</h1>
-        <p class="subtitle">
-            Our team is currently working hard to bring you an improved experience.
-            We'll be back shortly with something amazing!
-        </p>
-        
-        <div class="loader">
-            <div class="loader-circle"></div>
+            <div class="icon">🚀</div>
+            <h1>We're Making Things Better</h1>
+            <p class="subtitle">
+                Our team is currently working hard to bring you an improved experience.
+                We'll be back shortly with something amazing!
+            </p>
+            
+            <div class="loader">
+                <div class="loader-circle"></div>
+            </div>
+            
+            <p class="message">
+                Hang tight<span class="dots">...</span>
+            </p>
+
+            <!-- Contact Section -->
+            <div class="contact-section">
+                <div class="contact-title">
+                    <span>💬</span>
+                    <span>Need to reach us?</span>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div class="phone-numbers">
+                            <a href="tel:09204271113" class="contact-link">(0920) 427 1113</a>
+                            <span class="phone-divider">/</span>
+                            <a href="tel:09629451425" class="contact-link">(0962) 945 1425</a>
+                            <span class="phone-divider">/</span>
+                            <a href="tel:09155443789" class="contact-link">(0915) 544 3789</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">☎️</span>
+                        <a href="tel:0465141514" class="contact-link">(046) 514 1514</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">✉️</span>
+                        <a href="mailto:office.djvitsolutions@gmail.com" class="contact-link">office.djvitsolutions@gmail.com</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <p class="message">
-            Hang tight<span class="dots">...</span>
-        </p>
     </div>
 
     <script>
